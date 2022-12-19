@@ -95,5 +95,31 @@ window.addEventListener("load",buildNavbar);
 // Scroll to section on link click
 
 // Set sections as active
+function selectSection(){
+    const links = document.querySelectorAll("a.menu__link");
 
+    sections.forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionTitle = section.getAttribute("data-nav");
+        if(sectionTop > -100 & sectionTop  < 250){
+            console.log(sectionTitle);
+            section.classList.add("your-active-class");
+            links.forEach(l=>{
+                if(l.textContent === sectionTitle){
+                    console.log(l.textContent);
+                    l.classList.add("link__active");
+                }
+                else{
+                    console.log("Here");
+                    l.classList.remove("link__active");
+                }
+            });
+        }
+        else{
+            section.classList.remove("your-active-class");
+            //
+        }
+    })
+}
+window.addEventListener("scroll",selectSection);
 

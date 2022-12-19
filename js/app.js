@@ -23,6 +23,9 @@
  * 
 */
 
+const navbarList = document.getElementById("navbar__list");
+const sections = document.querySelectorAll("section");
+const fragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
@@ -39,7 +42,41 @@
 */
 
 // build the nav
+function buildNavbar(){
+    // loop through sections list
+    sections.forEach(section=>{
+        // Get section attributes 
+        const sectionId = section.getAttribute("Id");
+        const sectionTitle = section.getAttribute("data-nav");
 
+        // Create list item
+
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+
+        // add attributes to item
+
+        link.classList.add("menu__link");
+        link.href=`#${sectionId}`;
+        link.textContent = sectionTitle;
+
+        // Add click event
+
+        link.addEventListener("click",e=>{
+            e.preventDefault();
+            section.scrollIntoView({
+                behavior:"smooth"
+            })
+
+        })
+        item.appendChild(link);
+        fragment.appendChild(item);
+    })
+  navbarList.append(fragment);  
+  
+}
+
+window.addEventListener("load",buildNavbar);
 
 // Add class 'active' to section when near top of viewport
 

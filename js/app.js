@@ -27,19 +27,7 @@ const navbarList = document.getElementById("navbar__list");
 const sections = document.querySelectorAll("section");
 const fragment = document.createDocumentFragment();
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
 
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
 
 // build the nav
 function buildNavbar(){
@@ -52,24 +40,8 @@ function buildNavbar(){
         // Create list item
 
         const item = document.createElement("li");
-        const link = document.createElement("a");
+        item.innerHTML=`<a href="#${sectionId}" data-nav=${sectionId} class="menu__link">${sectionTitle}</a>`
 
-        // add attributes to item
-
-        link.classList.add("menu__link");
-        link.href=`#${sectionId}`;
-        link.textContent = sectionTitle;
-
-        // Add click event
-
-        link.addEventListener("click",e=>{
-            e.preventDefault();
-            section.scrollIntoView({
-                behavior:"smooth"
-            })
-
-        })
-        item.appendChild(link);
         fragment.appendChild(item);
     })
   navbarList.append(fragment);  
@@ -78,23 +50,7 @@ function buildNavbar(){
 
 window.addEventListener("load",buildNavbar);
 
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
 // Scroll to section on link click
-
-// Set sections as active
 function selectSection(){
     const links = document.querySelectorAll("a.menu__link");
 
@@ -102,15 +58,14 @@ function selectSection(){
         const sectionTop = section.getBoundingClientRect().top;
         const sectionTitle = section.getAttribute("data-nav");
         if(sectionTop > -100 & sectionTop  < 250){
-            console.log(sectionTitle);
             section.classList.add("your-active-class");
             links.forEach(l=>{
+                
                 if(l.textContent === sectionTitle){
-                    console.log(l.textContent);
+                    
                     l.classList.add("link__active");
                 }
                 else{
-                    console.log("Here");
                     l.classList.remove("link__active");
                 }
             });
@@ -122,4 +77,34 @@ function selectSection(){
     })
 }
 window.addEventListener("scroll",selectSection);
+
+
+// Scroll to anchor ID using scrollTO event
+
+addEventListener("load", event => {
+
+    const menuLinks = document.querySelectorAll('.menu__link');
+    menuLinks.forEach(link =>{
+        link.addEventListener('click', e=>{
+            e.preventDefault();
+            const targetDiv = e.target.dataset.nav;
+            const element = document.getElementById(targetDiv);
+            console.log(element);
+            element.scrollIntoView({
+                behavior: "smooth"
+              });
+
+        })
+    } );
+
+
+
+
+});
+
+
+
+
+
+
 

@@ -68,6 +68,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+
 }
 
 .navbar__menu li {
@@ -227,3 +228,4 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+

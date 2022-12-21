@@ -91,7 +91,9 @@ addEventListener("load", event => {
             const element = document.getElementById(targetDiv);
             console.log(element);
             element.scrollIntoView({
-                behavior: "smooth"
+                
+                behavior: "smooth",
+                block: "end"
               });
 
         })
@@ -101,6 +103,42 @@ addEventListener("load", event => {
 
 
 });
+
+
+// Collapsible Sections
+
+addEventListener("load",event=>{
+
+const sectionHeadings = document.querySelectorAll("h2");
+console.log(sectionHeadings);
+
+sectionHeadings.forEach(sh=>{
+    sh.innerHTML += `<button type="button" class="collapsible">Mini Section</button>`
+});
+
+const Collapsible = document.querySelectorAll(".collapsible");
+    Collapsible.forEach(col=>{
+        console.log(col);
+        col.addEventListener("click", function(){
+            col.classList.toggle("active");
+            const NextParagraph = this.parentElement.nextElementSibling;
+            console.log(NextParagraph);
+            if(NextParagraph.style.display === "block")
+            {
+                NextParagraph.style.display= "none";
+                console.log("I'm Here");
+            }
+            else{
+                NextParagraph.style.display = "block";
+            }
+            console.log(NextParagraph);
+        });
+    });
+});
+
+// Add the button dynamically to h2 elements
+
+
 
 
 

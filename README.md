@@ -1,7 +1,5 @@
 # Landing Page Project | FWD
 
-
-
 This project requires you to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
 
 ---
@@ -17,7 +15,6 @@ This project requires you to build a multi-section landing page, with a dynamica
 ---
 ## Instructions
 
-	
 The project should have a structure like the one shown below. All files shown must be present and the app must successfully render a home page with clear design and functionality added when index.html is loaded in the browser. No errors should display in console.
 
 1. ##### CSS

@@ -229,3 +229,34 @@ section.your-active-class .landing__container::after {
 	}
 }
 
+// Make Sections Collapsible 
+
+
+
+.collapsible {
+    background-color:rgba(0,0,0,0);
+    color:white;
+    border-color:white;
+
+}
+.active, .collapsible:hover {
+    background-color: #000;
+    color:#fff;
+}
+
+section:nth-child(odd) .collapsible{
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+
+section:nth-child(even) .collapsible{
+    padding: 10px;
+    margin: 10px;
+    float: right;
+}
+.section__content__collapse{
+    padding: 0 18px;
+    display: none;
+    overflow: hidden; 
+}

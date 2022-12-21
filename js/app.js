@@ -160,7 +160,9 @@ scrollButton.addEventListener("click",()=>{
 const navMenu = document.querySelector(".page__header");
 
 document.addEventListener("scroll",()=>{
+    
     navMenu.style.visibility = "hidden";
+
     setTimeout(function(){
         if (navMenu.style.visibility === "hidden"){
             navMenu.style.visibility = "visible";

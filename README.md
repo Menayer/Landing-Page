@@ -10,6 +10,7 @@ This project requires you to build a multi-section landing page, with a dynamica
 * [Languages](#languages)
 * [Installation](#installation)
 * [Development](#development)
+* [References](#references)
 * [Author](#author)
 
 ---
@@ -60,6 +61,11 @@ or you can download as Zip file from Code button in my repo
     * Updated and changed the design/content.
     * Make sections collapsible.
 
+## References
+
+- [w3schools.com](https://w3schools.com/) 
+- [stackoverflow.com](https://stackoverflow.com/) 
+- [github.com](https://github.com/) 
 
 
 ## Author

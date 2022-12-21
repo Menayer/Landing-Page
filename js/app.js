@@ -98,10 +98,6 @@ addEventListener("load", event => {
 
         })
     } );
-
-
-
-
 });
 
 
@@ -109,6 +105,7 @@ addEventListener("load", event => {
 
 addEventListener("load",event=>{
 
+// Add the button dynamically to h2 elements
 const sectionHeadings = document.querySelectorAll("h2");
 console.log(sectionHeadings);
 
@@ -136,8 +133,42 @@ const Collapsible = document.querySelectorAll(".collapsible");
     });
 });
 
-// Add the button dynamically to h2 elements
 
+// Scroll to top button
+
+const scrollButton = document.querySelector(".scroll__btn");
+
+document.addEventListener("scroll",()=>{
+    if(window.scrollY > 400){
+        scrollButton.style.visibility = "visible";
+    }else{
+        scrollButton.style.visibility = "hidden";
+    }    
+});
+
+// Smooth scroll to top
+
+scrollButton.addEventListener("click",()=>{
+    window.scrollTo({
+        top:0,
+        behavior: "smooth"
+    });
+});
+
+// Hide Navigation bar while scrolling
+
+const navMenu = document.querySelector(".page__header");
+
+document.addEventListener("scroll",()=>{
+    navMenu.style.visibility = "hidden";
+    setTimeout(function(){
+        if (navMenu.style.visibility === "hidden"){
+            navMenu.style.visibility = "visible";
+            
+        }
+    },2000);
+    
+});
 
 
 

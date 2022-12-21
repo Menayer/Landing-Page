@@ -50,10 +50,16 @@ or you can download as Zip file from Code button in my repo
 - In CSS I've add  .link__active class to mark the active link
 - In JavaScript i've done the following:
 
-    * Created and defined some global variables
+    * Created and defined some global variables.
     * Build The dynamic navigation bar function which query for section IDs in the HTML page and followed the navigation specifications in the rubric using append, appendChild and innerHTML.
-    * Build  the selectSection function which link the navbar anchor with the section and drt active state to the section and anchor link in navbar
-    *  build the smooth scroll function to add smooth scrolling behavior to the page
+    * Build  the selectSection function which link the navbar anchor with the section and drt active state to the section and anchor link in navbar.
+    *  build the smooth scroll function to add smooth scrolling behavior to the page.
+    * Added an active state to your navigation items when a section is in the viewport.
+    * Hide fixed navigation bar while not scrolling.
+    * Added a scroll to top button on the page that’s only visible when the user scrolls below the fold of the page.
+    * Updated and changed the design/content.
+    * Make sections collapsible.
+
 
 
 ## Author

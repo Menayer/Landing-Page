@@ -229,10 +229,7 @@ section.your-active-class .landing__container::after {
 	}
 }
 
-// Make Sections Collapsible 
-
-
-
+/* Make Sections Collapsible  */
 .collapsible {
     background-color:rgba(0,0,0,0);
     color:white;
@@ -265,12 +262,59 @@ section{
     flex-wrap: wrap;
     
 }
-
 @media (max-width: 768px){
+    /* Fix Video div position in sections  */
+
     iframe{
-        width:400px;
+        width:350px;
     }
     section:nth-child(odd){
         flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center; 
+
     }
+    section:nth-child(even){
+        justify-content: center;
+        align-items: center; 
+
+    }
+    /* Make navbar in colomn direction  */
+
+    .navbar__menu ul{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    main{
+        margin-top:250px;
+    }
+}
+
+
+/* Scroll to top div */ 
+
+.scroll__to__top{
+    position:relative;
+}
+.scroll__btn{
+    background-color: black;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    font-size: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.scroll__btn_pos{
+    position:fixed;
+    bottom:40px;
+    right:25px;
+    z-index:20;
 }

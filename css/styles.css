@@ -260,3 +260,17 @@ section:nth-child(even) .collapsible{
     display: none;
     overflow: hidden; 
 }
+section{
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+
+@media (max-width: 768px){
+    iframe{
+        width:400px;
+    }
+    section:nth-child(odd){
+        flex-direction: column-reverse;
+    }
+}
